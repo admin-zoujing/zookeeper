@@ -19,9 +19,10 @@ rm -rf /var/run/yum.pid
 rm -rf /var/run/yum.pid
 #一、-----------------------------------安装zookeeper--------------------------------------------------
 #1）解决依赖关系
-#yum -y install pcre-devel openssl-devel make gcc expat-devel
+yum -y install pcre-devel openssl-devel make gcc expat-devel
 #cd /usr/local/src/zookeeper/rpm
 #rpm -ivh /usr/local/src/zookeeper/rpm/*.rpm --force --nodeps
+
 #2)编译安装zookeeper
 groupadd zookeeper
 useradd -g zookeeper -s /sbin/nologin zookeeper
@@ -53,7 +54,6 @@ cat >> /usr/lib/systemd/system/zookeeper.service <<EOF
 [Unit]
 Description=The Zookeeper Server
 After=network.target remote-fs.target nss-lookup.target
-Documentation=man:zookeeper(8)
 
 [Service]
 Type=forking
@@ -73,10 +73,3 @@ systemctl restart zookeeper.service
 ps aux |grep zookeeper
 sleep 5
 rm -rf /usr/local/src/zookeeper
-
-
-
-
-
-
-
