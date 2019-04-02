@@ -28,6 +28,7 @@ groupadd zookeeper
 useradd -g zookeeper -s /sbin/nologin zookeeper
 cd /usr/local/src/zookeeper
 mkdir -pv /usr/local/zookeeper
+wget http://59.80.44.50/archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz
 tar -zxvf zookeeper-3.4.11.tar.gz -C /usr/local/zookeeper
 cd /usr/local/zookeeper/zookeeper-3.4.11/conf
 cp zoo_sample.cfg zoo.cfg
