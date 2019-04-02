@@ -1,5 +1,6 @@
 #! /bin/bash
 #centos7.4源码编译zookeeper安装脚本
+#下载地址：http://archive.apache.org/dist/zookeeper/
 
 chmod -R 777 /usr/local/src/zookeeper
 #1、时间时区同步，修改主机名
